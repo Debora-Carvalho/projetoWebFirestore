@@ -23,6 +23,18 @@ app.get('/', function(req,res){
     res.render('primeira_pagina')
 })
 
+app.post('/cadastrar', function(req,res){
+    var result = db.collection('Clientes').add({
+        nome: req.body.nome,
+        telefone: req.body.telefone,
+        origem: req.body.origem,
+        data_contato: req.body.data_contato,
+        observacao: req.body.observacao
+    }).then(function(){
+        console.log('Dados cadastrados com sucesso!')
+    })
+})
+
 app.listen(8081, function(){
     console.log("Servidor ativo!")
 })
