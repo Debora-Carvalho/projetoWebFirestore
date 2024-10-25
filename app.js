@@ -64,7 +64,7 @@ app.get("/consultar", function(req,res){
                 function(doc){
                     const data = doc.data()
                     data.id = doc.id
-                    //consolte.log(doc.data())
+                    //console.log(doc.data())
                     posts.push(data)
                 }
             )
